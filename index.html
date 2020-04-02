@@ -4,8 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cryptocurrency Price</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
+
 <body>
-    
+    <div class="container">
+        <header class="sticky-header">
+            <div class="header-title-logo">
+                <img class="header-logo" src="images/logo.svg">
+                <h1 class="header-title">Cryptocurrency Price</h1>
+            </div>
+
+            <form class="search-box">
+                <input type="text" class="search-field" placeholder="Bitcoin, Ethereum & ..." onclick="this.placeholder=''" onblur="this.placeholder='Bitcoin, Ethereum & ...'">
+            </form>
+        </header>
+        <div class="coin-result-list">
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        const topHeader = document.querySelector('.sticky-header');
+        window.addEventListener('scroll', (e) => {
+            if (window.pageYOffset > 200) {
+                topHeader.classList.add('sticky-header-changes');
+            } else {
+                topHeader.classList.remove('sticky-header-changes');
+            }
+        })
+    </script>
 </body>
 </html>
