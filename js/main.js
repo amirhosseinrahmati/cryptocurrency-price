@@ -28,14 +28,13 @@ function displayMatches() {
     const regex = new RegExp(this.value, 'gi');
     const coinName = coin.name.replace(regex, `<span>${this.value}</span>`);
     const coinSymbol = coin.symbol.replace(regex, `<span>${this.value}</span>`);
-    const coinPrice = coin.price;
-    const coinIcon = coin.iconUrl;
-    const coinURL = coin.websiteUrl;
+
     return `
-    <a href="${coinURL}" target="_blank" class="coin-card">
+    <a href="${coin.websiteUrl}" target="_blank" class="coin-card">
+      <img src="${coin.iconUrl}" alt="${coinName}">
       <span>${coinName}</span>
       <span>${coinSymbol}</span>
-      <span>${coinPrice}</span>
+      <span>${coin.price}</span>
     </a>`;
   }).join('');
   coinListOutput.innerHTML = html;
