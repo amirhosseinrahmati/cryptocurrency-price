@@ -34,7 +34,7 @@ function displayMatches() {
       <img src="${coin.iconUrl}" alt="${coinName}">
       <span>${coinName}</span>
       <span>${coinSymbol}</span>
-      <span>${coin.price}</span>
+      <span>${coin.price.slice(0,7)} $</span>
     </a>`;
   }).join('');
   coinListOutput.innerHTML = html;
